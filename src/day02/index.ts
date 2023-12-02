@@ -64,7 +64,7 @@ const getHighestGrabs = (game: Game) => {
 
 const part1 = (rawInput: string) =>
   parseInput(rawInput)
-    .filter((game) => isValidGame(game))
+    .filter(isValidGame)
     .reduce((acc, { game }) => acc + game, 0)
 
 

@@ -26,13 +26,13 @@
         "attempts": [
           "2061"
         ],
-        "time": 0.697125
+        "time": 0.7205
       },
       "part2": {
         "solved": true,
         "result": "83105",
         "attempts": [],
-        "time": 0.593875
+        "time": 0.608208
       }
     },
     {
