@@ -35,10 +35,10 @@ export const range = (startAt: number, endAt: number) => {
   return [...Array(size).keys()].map((i) => i + startAt)
 }
 
-export const rangeFrom = (size: number, startAt: number) =>
+export const rangeFrom = (size: number, startAt: number, inclusive = false) =>
   Array(size)
     .fill(null)
-    .map((_, k) => k + startAt + 1)
+    .map((_, k) => k + startAt + (inclusive ? 0 : 1))
 
 export const contains = <T>(array1: T[], array2: T[]): boolean => {
   return array1.every((e) => array2.includes(e))
