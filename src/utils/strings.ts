@@ -59,3 +59,5 @@ export const letters = [
   "Y",
   "Z",
 ]
+
+export const containsTimes = (s: string, c: string) => s.match(new RegExp(c, 'g')).length
