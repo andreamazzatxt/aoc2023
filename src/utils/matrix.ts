@@ -29,3 +29,32 @@ export const getAdiacents = <T>({ x, y }: Coord, matrix: T[][]) => {
 
   return { top, bottom, left, right, topRight, topLeft, bottomRight, bottomLeft }
 }
+
+export const matrixSearch = <T>(lookup: T, matrix: T[][]) => {
+  let result: Coord[] = []
+  matrix.forEach((row, y) => {
+    row.forEach((cell, x) => {
+      if (cell === lookup) {
+        result.push({ x, y })
+      }
+    })
+  })
+  return result
+}
+
+export const matrixForEach = <T>(
+  matrix: T[][],
+  callback: (cell: T, row: T[], column: T[], x: number, y: number) => void,
+) => {
+  range(0, matrix.length - 1).forEach((y) => {
+    const row = matrix[y]
+    range(0, row.length - 1).forEach((x) => {
+      const column = matrix.map((l) => l[x])
+      const cell = matrix[y][x]
+      callback(cell, row, column, x, y)
+    })
+  })
+}
+
+
+export const manhattan = (a: Coord, b: Coord) => Math.abs(a.x - b.x) + Math.abs(a.y - b.y)
